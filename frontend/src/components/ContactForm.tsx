@@ -26,7 +26,7 @@ const ContactForm: React.FC = () => {
     setError(null);
 
     try {
-      const response = await fetch("http://localhost:4000/api/send-contact", {
+      const response = await fetch("https://ashraya.onrender.com/api/send-contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
