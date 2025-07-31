@@ -5,7 +5,11 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin:"https://ashraya-1.onrender.com",
+  credentials:true,
+}
+             ));
 app.use(bodyParser.json());
 
 const PORT = process.env.PORT || 5000;
@@ -36,7 +40,7 @@ app.post("/api/send-booking", (req, res) => {
 
   const mailOptions = {
     from: userEmail,
-    to: "ashrayahotellamahi@gmail.com",
+    to: "hotelashraya3@gmail.com",
     subject: `New Booking from ${userName}`,
     html: `
       <p><strong>Name:</strong> ${userName}</p>
@@ -102,7 +106,7 @@ app.post("/api/send-dinein", (req, res) => {
 
   const mailOptions = {
     from: email,
-    to: "ashrayahotellamahi@gmail.com",
+    to: "hotelashraya3@gmail.com",
     subject: `New Dine-In Reservation from ${name}`,
     html: `
       <h2>New Dine-In Reservation Request</h2>
