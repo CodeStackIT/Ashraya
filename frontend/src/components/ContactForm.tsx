@@ -171,9 +171,14 @@ const ContactForm: React.FC = () => {
             ></textarea>
           </div>
 
-          <Button type="submit" variant="primary" className="w-full py-3">
-            Send Message
-          </Button>
+              <Button
+        type="submit"
+        variant="primary"
+        className="w-full py-3"
+        disabled={loading}
+      >
+        {loading ? "Sending..." : "Send Message"}
+      </Button>
         </form>
       )}
     </div>
